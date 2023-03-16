@@ -1,10 +1,11 @@
 const { json } = require('express');
 const express = require('express'); 
+const app = express(); 
 
-const app = express();
 
-app.use(express.json);
-app.use(express.urlencoded());
+// Need to import Express libraries to read POST body data (e.g. req.body)
+app.use(express.json());             
+app.use(express.urlencoded()); 
 
 let users = [
     {id: 1, name: 'rohit'},
