@@ -7,17 +7,22 @@ const app = express();
 app.use(express.json());             
 app.use(express.urlencoded()); 
 
-let users = [
-    {id: 1, name: 'rohit'},
-    {id: 2, name: 'abhi'},
-    {id: 3, name: 'navu'},
-];
+let users = [ 
+  { id: 1, name: 'John' }, 
+  { id: 2, name: 'Jane' }, 
+  { id: 30, name: 'Bob' }
+]; 
 
-app.listen(3000,()=>{
-    console.log('The server have ears now on port 3000')
-})
-; 
-  
+
 app.get('/', (req, res) => { 
-    res.send("Welcome to our server");
-  })
+  res.send("Welcome to our server");
+}); 
+
+
+app.get('/users', (req, res) => { 
+  res.json(users); 
+}); 
+
+app.listen(3000, () => { 
+    console.log('Server is listening on port 3000'); 
+  }); 
