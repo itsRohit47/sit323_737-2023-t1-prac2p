@@ -10,19 +10,17 @@ app.use(express.urlencoded());
 let users = [ 
   { id: 1, name: 'John' }, 
   { id: 2, name: 'Jane' }, 
-  { id: 30, name: 'Bob' }
+  { id: 3, name: 'Bob' }
 ]; 
 
 
 app.get('/', (req, res) => { 
-  res.send("Welcome to our server");
+  res.sendFile('index.html');
 }); 
 
 
-app.get('/users', (req, res) => { 
-  res.json(users); 
-}); 
 
-app.listen(2000, () => { 
+
+app.listen(3000, () => { 
     console.log('Server is listening on port 3000'); 
 }); 
